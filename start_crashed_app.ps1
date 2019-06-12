@@ -2,9 +2,7 @@
 
 forEach ($apppool in $apppools) {
 
-#$name = Select-String -InputObject $apppool -Pattern '"([^"]+)"'
-
-$test = $apppool -Match '"([^"]+)"'
-$app = $Matches[1]
-Start-WebAppPool -Name $app
+    $test = $apppool -Match '"([^"]+)"'
+    $app = $Matches[1]
+    Start-WebAppPool -Name $app
 }
